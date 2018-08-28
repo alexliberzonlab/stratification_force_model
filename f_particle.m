@@ -61,7 +61,7 @@ V2 = settlingvelocity(rhop,rho2,g,d,nu2);
 % Determine Fr1, Vc0 and trec
 Fr1 = abs(V1) / (N * d);
 Vc0 = Vc0_Vp(Fr1) * Vp;
-trec = trec_d2nu2(V2*d/nu2)*(d^2/nu2) /3;
+trec = trec_d2nu2(V2*d/nu2)*(d^2/nu2);
 
 % Solve equation of motion
 y0 = [z0; V1];  
@@ -84,7 +84,7 @@ if (zp <= zl)
     Vc = Vc0;
     tzl = t;
 else
-    Vc = Vc0 * exp(-(t-tzl)/trec);
+    Vc = Vc0 * exp(-3*(t-tzl)/trec);
 end
 
 % stratification force
