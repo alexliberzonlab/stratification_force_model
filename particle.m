@@ -2,7 +2,6 @@
 
 %% 
 clc 
-clear all
 close all
 
 %% parameters
@@ -47,12 +46,12 @@ if flag ==5;load('Data/TrajPF_complete.mat');
     rho2 = 1045;          % density bottom layer [kg/m3]
     nu1  = 1.17e-06;      % viscosity top layer [m2/s]
     nu2  = 1.19e-06;      % viscosity bottom layer [m2/s]
-    TRAJP =  eval(['TrajPF']); lam=0.25;
+    TRAJP =  eval('TrajPF'); lam=0.25;
 end
 
 h=zl-zu;
 
-Ind_vec=[1:length(TRAJP)];
+Ind_vec=1:length(TRAJP);
 
 
 
