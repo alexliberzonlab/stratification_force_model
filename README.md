@@ -1,5 +1,6 @@
 # Supplementary material for Verso et al. "Transient stratification force on particles crossing a density interface"
 
+[![DOI](https://www.zenodo.org/badge/DOI/10.5281/zenodo.3511727.svg)](https://doi.org/10.5281/zenodo.3511727)
 
 
 [![Simulation](snapshot.png)](https://www.youtube.com/watch?v=1-rRBhaeAd0 "Simulation of a particle crossing stratified interface - Click to watch on Youtube")
