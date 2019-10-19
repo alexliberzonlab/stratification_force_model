@@ -10,7 +10,7 @@ To run the code open the file `particle.m`, change the value of `flag` from 1 to
 The paper is at https://doi.org/10.1016/j.ijmultiphaseflow.2019.103109
 
 Please cite it as: 
-
+```
 @article{Verso2019,
 abstract = {We perform a series of experiments to measure Lagrangian trajectories of settling and rising particles as they traverse a density interface of thickness h using an index-matched water-salt-ethanol solution. The experiments confirm the substantial deceleration that particles experience as a result of the additional force exerted on the particle due to the sudden change in density. This stratification force is calculated from the measurement data for all particle trajectories. In absence of suitable parameterisations in the literature, a simple phenomenological model is developed which relies on parameterisations of the effective wake volume and recovery time scale. The model accurately predicts the particle trajectories obtained in our experiments and those of Srdi{\'{c}}-Mitrovi{\'{c}} et al. (1999). Furthermore, the model demonstrates that the problem depends on four key parameters, namely the entrance Reynolds number Re1, entrance Froude number Fr, particle to fluid density ratio $\rho$p/$\rho$f, and relative interface thickness h/a.},
 author = {Verso, Lilly and van Reeuwijk, Maarten and Liberzon, Alexander},
@@ -24,6 +24,6 @@ url = {http://www.sciencedirect.com/science/article/pii/S0301932219302162},
 volume = {121},
 year = {2019}
 }
-
+```
 
 
