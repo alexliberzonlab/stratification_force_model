@@ -1,4 +1,9 @@
-# Supplementary material for the paper by Verso et al. "Transient stratification force on particles crossing a density interface"
+# Supplementary material for Verso et al. "Transient stratification force on particles crossing a density interface"
+
+
+
+[![Simulation](snapshot.png)](https://www.youtube.com/watch?v=1-rRBhaeAd0 "Simulation of a particle crossing stratified interface - Click to watch on Youtube")
+
 
 
 This repository contains the Matlab (Mathworks Inc.) and Octave (https://www.gnu.org/software/octave/) compatible code that models a trajectory of an inertial particle crossing the interface. 
