@@ -38,55 +38,25 @@ h  = zl-zu;                                  % interface thickness  [m]
 N  = (2*g*(rho2-rho1)/h/(rho1+rho2))^0.5;    % buoyancy frequency [1/s]
 
 % Construct density and viscosity functions
-% rho = @(z) fitfun(z, zu, zl, rho1, rho2);
-% nu  = @(z) fitfun(z, zu, zl, nu1, nu2);
-% lam = 0.35;
 rho = @(z) rho2 - 0.5*(rho2-rho1)*(1-tanh((z-0.5*(zl + zu))/(lam*h)));
 nu  = @(z)  nu2 + 0.5*(nu1-nu2)*(1-tanh((z-0.5*(zl + zu))/(lam*h)));
-
-% test linear density and viscosities as piecewise functions
-% rho = @(z) rho1.*(z<=zu)+...
-%           (rho2 + ((rho2-rho1)/(zl-zu))*(z-zl)).*(z>zu & z<zl)+...
-%           rho2.*(z>zl);
-% 
-% nu  = @(z)   nu1.*(z<=zu)+...
-%             (nu2 + ((nu2-nu1)/(zl-zu))*(z-zl)).*(z>zu & z<zl)+...
-%              nu2.*(z>zl);
-
-
-% Visualise the density and viscosity functions
-% z=linspace(0,0.12,500);  % z linspace vector z-axis
-% figure
-% subplot(1,2,1)
-% plot(rho(z),z, ...
-%      [rho1, rho2], zu * [1,1], '--k', [rho1, rho2], zl * [1,1], '--k'); 
-% xlabel('\rho'); ylabel('z')
-% subplot(1,2,2)
-% plot(nu(z), z, ...
-%     [nu1, nu2], zu * [1,1], '--k', [nu1, nu2], zl * [1,1], '--k'); 
-% xlabel('\nu'); ylabel('z')
 
 % Auxiliary functions
 Cd         = @(Re) 0.25 + (24./Re) + (6./(1+Re.^(0.5)));  % drag law
 trec_d2nu2 = @(Re) 13./Re;                                % recovery time
 
-
 % latest fit of the data
 Vc0_f = @(Fr,Re,Vp)  0.13*Fr.^0.75 * Vp + 0.*Re;
-
 
 % calculate settling velocity
 V1 = settlingvelocity(rhop,rho1,g,d,nu1);
 V2 = settlingvelocity(rhop,rho2,g,d,nu2);
 
 % Determine Fr1, Vc0 and trec
-Fr1 = abs(V1) / (N * d);
-Re1 = abs(V1) * d / (nu1);
-
-
+Fr1  = abs(V1) / (N * d);
+Re1  = abs(V1) * d / (nu1);
 trec = trec_d2nu2(V2*d/nu2)*(d^2/nu2);
-Vc0 = max(Vc0_f(Fr1,Re1,Vp),0);
-
+Vc0  = max(Vc0_f(Fr1,Re1,Vp),0);
 
 % Solve equation of motion
 y0 = [z0; V1];  
@@ -96,6 +66,7 @@ zp  = y(:, 1);  V  = y(:, 2);
 
 function dydt = particle_ode(t, y, rho1, rho, nu , Cd, g, rhop, d, ...
                              zu, zl, Vc0,trec)
+                             
 zp   = y(1);                % particle position
 V    = y(2);                % particle velocity
 
