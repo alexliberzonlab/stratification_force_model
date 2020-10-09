@@ -15,7 +15,7 @@ There are 5 types of particles, P1-P4 measured in our experiment and PF digitize
 To run the code open the file `particle.m`, change the value of `flag` from 1 to 5 and `Run`
 
 ## You can run it without installation using the Python version:
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/alexlib/stratification_force_model/master?filepath=Python%2Fparticle.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/alexliberzonlab/stratification_force_model/master?filepath=Python%2Fparticle.ipynb)
 
 ## How to cite this work:
 The paper is at https://doi.org/10.1016/j.ijmultiphaseflow.2019.103109
