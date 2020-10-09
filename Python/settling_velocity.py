@@ -2,7 +2,12 @@ from scipy.optimize import least_squares
 import numpy as np
 
 
-def Cd(Re): return 0.4 + 24.0/Re + 6.0/(1+np.sqrt(Re))  
+def Cd(Re):
+    if Re <= 0:
+        Re = 1e-3
+        
+    return 0.4 + 24.0/Re + 6.0/(1+np.sqrt(Re))
+
 def Vp(d): return np.pi*d**3/6
 def Ap(d): return np.pi*d**2/4
 
