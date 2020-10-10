@@ -42,7 +42,7 @@ rho = @(z) rho2 - 0.5*(rho2-rho1)*(1-tanh((z-0.5*(zl + zu))/(lam*h)));
 nu  = @(z)  nu2 + 0.5*(nu1-nu2)*(1-tanh((z-0.5*(zl + zu))/(lam*h)));
 
 % Auxiliary functions
-Cd         = @(Re) 0.25 + (24./Re) + (6./(1+Re.^(0.5)));  % drag law according to White 1974
+Cd         = @(Re) 0.4 + (24./Re) + (6./(1+Re.^(0.5)));  % drag law according to White 1974
 trec_d2nu2 = @(Re) 13./Re;                                % recovery time 
 Vc0_f      = @(Fr,Re,Vp)  0.13*Fr.^0.75 * Vp + 0.*Re;     % caudal volume
 
