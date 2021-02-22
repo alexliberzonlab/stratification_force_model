@@ -52,7 +52,9 @@ def f_particle(z0, tend, rhop, d, g, zu, zl, rho1, rho2, nu1, nu2, lam, options)
     # Auxiliary functions
     # Cd(Re) exists
     def trec_d2nu2(Re): return 13./Re                                # recovery time 
-    def Vc0_f(Fr,Re,Vp): return 0.13*Fr**0.75 * Vp + 0.*Re           # caudal volume
+    # def Vc0_f(Fr,Re,Vp): return 0.13*Fr**0.75 * Vp + 0.*Re           # caudal volume
+    # see Marco e-mail from Feb. 21, 2021
+    def Vc0_f(Fr,Re,Vp): return (1 - (1.85 / Fr )) * Vp + 0.*Re
 
     # calculate settling velocity
     sol = settling_velocity(rhop,rho1,g,d,nu1)
